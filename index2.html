@@ -11,8 +11,10 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <div id = "app">
         <form action="">
-     Price: <input type="text" v-model.number="price">
-     {{price + shipping}}
+    
+    <textarea v-model.trim="tweet" cols="30" rows="10"></textarea>
+    <p>{{tweet.length}} out of {{max}} characters used.</p>
+    <p v-if="tweet.length>max">Too many characters</p>
     <button>Submit</button>
     </forn>
       {{country}}
@@ -21,8 +23,8 @@
     let app= new Vue({
         el:'#app',
         data:{
-          price:0,
-            shipping:5.5
+          tweet:'',
+          max:140
         },
         methods:{
             

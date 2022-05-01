@@ -11,11 +11,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <div id = "app">
         <form action="">
-      <select v-model="country" @change="changed" v-if="countries.length">
-        <option value="">Please select a country</option>
-      <option v-bind:value="country.code" v-for="country in countries">{{country.name}}</option>
-
-      </select> 
+     Price: <input type="text" v-model.number="price">
+     {{price + shipping}}
     <button>Submit</button>
     </forn>
       {{country}}
@@ -24,21 +21,14 @@
     let app= new Vue({
         el:'#app',
         data:{
-            country:'',
-            countries:[]
+          price:0,
+            shipping:5.5
         },
         methods:{
             
         },
         mounted(){
-            setTimeout(()=>{
-            this.countries = [
-                {code:'UK',name:'United Kingdoms'},
-                {code:'IN',name:'India'},
-                {code:'US',name:'United States'}
-            ]
-
-            },1000)
+            
         }
         
     })

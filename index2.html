@@ -12,7 +12,7 @@
     <div id = "app">
         <form action="">
     
-    <textarea v-model.trim="tweet" cols="30" rows="10"></textarea>
+    <textarea v-model.trim.lazy="tweet" cols="30" rows="10"></textarea>
     <p>{{tweet.length}} out of {{max}} characters used.</p>
     <p v-if="tweet.length>max">Too many characters</p>
     <button>Submit</button>

@@ -32,7 +32,10 @@
                     name: this.item
                 };
                 this.items.push(item);
+                 localStorage.setItem('items',JSON.stringify(this.items));
+                
                 this.item = '';
+
             },
             removeItem:function(item){
                 var newItems = this.items.filter(function(i){
@@ -40,8 +43,12 @@
                 })
                 this.items = newItems;
             }
+        },
+        mounted:function(){
+          //  alert("z");
+            this.items = JSON.parse(localStorage.getItem('items')) || [];
         }
-    })
+    });
     
     </script>
   </body>

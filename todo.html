@@ -42,6 +42,7 @@
                     return item.id !== i.id;
                 })
                 this.items = newItems;
+                localStorage.setItem('items',JSON.stringify(this.items));
             }
         },
         mounted:function(){
